@@ -14,10 +14,14 @@
 
     Locations.prototype.donutsPerHour = function() {
       var perDay = 0;
-      for (i = 0; i <= 11; i++) {
+      for (i = 0; i <= 11; i++)
+      console.log(i); {
       var donutsHourTotal = this.generateCustomers();
+      console.log(this.generateCustomers())
       this.donutsHour.push(donutsHourTotal);
+      console.log(this.(donutsHourTotal)
       perDay += donutsHourTotal;
+      console.log(perDay);
       }
       return perDay;
     };
