@@ -1,5 +1,4 @@
-//function() {
-
+(function() {
     var Locations = function(min, max, avg, name) {
       this.min = min;
       this.max = max;
@@ -46,4 +45,31 @@
       Wedgewood.render();
       Ballard.render();
 
-//})();
+      var newLocation = new Locations();
+
+      var location = window.location;
+      var newLocation = document.getElementById("newLocation");
+      var addLocation = document.getElementById("addLocation");
+
+      var renderAllLocations = function() {
+        newLocation.inerHTML = '';
+        allLocation.forEach(function(location) {
+          newLocation.appendChild(location.render());
+        });
+      }
+      var handleNoteFormSubmit = function(event) {
+        event.preventDefault();
+
+        if (!event.target.note.value) {
+        return alert('note cannot be blank');
+     };
+   }
+
+      var submitButton = document.getElementById('hellow');
+      console.dir(submitButton);
+      //submitButton.addEventListener('click', function () {
+        //alert(yaa);
+   //});
+
+
+})();
