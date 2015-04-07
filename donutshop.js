@@ -1,45 +1,49 @@
-//(function() {
+//function() {
 
-      var Locations = function(min, max, avg) {
+    var Locations = function(min, max, avg, name) {
       this.min = min;
       this.max = max;
       this.avg = avg;
       this.donutsHour = [];
-    };
-
-    Locations.prototype.generateCustomers = function() {
-      var newCustomers = Math.floor(Math.random() * this.max - this.min +1) + this.min;
-      return newCustomers * this.avg;
+      this.name = name;
     };
 
     Locations.prototype.donutsPerHour = function() {
-      var perDay = 0;
-      for (i = 0; i <= 11; i++)
-      console.log(i); {
-      var donutsHourTotal = this.generateCustomers();
-      console.log(this.generateCustomers())
+      var newCustomers = Math.floor(Math.random() * this.max - this.min + 1) + this.min;
+      return Math.round(newCustomers * this.avg);
+    };
+
+    Locations.prototype.donutsPerDay = function() {
+      var perDay;
+      for (i = 0; i <= 11; i++) {
+      var donutsHourTotal = this.donutsPerHour();
       this.donutsHour.push(donutsHourTotal);
-      console.log(this.(donutsHourTotal)
       perDay += donutsHourTotal;
-      console.log(perDay);
       }
       return perDay;
     };
 
-    //Locations.prototype.render = function() {
+    Locations.prototype.render = function() {
+      var dailyTotal = this.donutsPerDay();
+      var elTr = document.getElementById(this.name);
+      for (var i = 0; i <= this.donutsHour.length; i++) {
+        var el = document.createElement('td');
+        el.textContent = this.donutsHour[i];
+        elTr.appendChild(el);
+      }
+      el.textContent = dailyTotal;
+      elTr.appendChild(el);
+    };
 
-    //};
+      var Downtown = new Locations(8, 43, 4.5, 'Downtown');
+      var CapitalHill = new Locations(4, 37, 2, 'CapitalHill');
+      var SouthLakeUnion = new Locations(9, 23, 6.33, 'SouthLakeUnion');
+      var Wedgewood = new Locations(2, 28, 1.25, 'Wedgewood');
+      var Ballard = new Locations(8, 58, 3.75, 'Ballard');
+      Downtown.render();
+      CapitalHill.render();
+      SouthLakeUnion.render();
+      Wedgewood.render();
+      Ballard.render();
 
-      var Downtown = new Locations(8, 43, 4.5);
-      var CapitalHill = new Locations(4, 37, 2);
-      var SouthLakeUnion = new Locations(9, 23, 6.33);
-      var Wedgewood = new Locations(2, 28, 1.25);
-      var Ballard = new Locations(8, 58, 3.75);
-
-    //Post.prototype.render = function() {
-
-        //for(var i = 0; i < this.comments.length; i++) {
-          //commentsEl.appendChild(this.comments[i].render());
-        //}
-      //};
 //})();
