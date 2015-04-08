@@ -22,8 +22,16 @@
       }
     };
 
+    Locations.prototype.renderNewRow = function() {
+      var tableRef = document.getElementById('myTable');
+      var newRow   = tableRef.insertRow(tableRef.rows.length);
+      var newCell  = newRow.insertCell(0);
+      var newText  = document.createTextNode('new row')
+      newCell.appendChild(newText);
+        var tr = document.createElement('tr');
+      };
+
     Locations.prototype.render = function() {
-      var tr = document.createElement(tr);
       var elTr = document.getElementById(this.name);
       for (var i = 0; i <= this.donutsHour.length; i++) {
         var el = document.createElement('td');
@@ -50,30 +58,17 @@
       Ballard.donutsPerDay();
       Ballard.render();
 
-      var location = window.location;
-      var newLocation = document.getElementById("newLocation");
-      var addLocation = document.getElementById("addLocation");
-
-      var renderAllLocations = function() {
-        newLocation.inerHTML = '';
-        allLocation.forEach(function(location) {
-          newLocation.appendChild(location.render());
-        });
-      }
-      var handleNoteFormSubmit = function(event) {
-        event.preventDefault();
-
-        if (!event.target.note.value) {
-        return alert('note cannot be blank');
-     };
-   }
-
       var submitButton = document.getElementById('submitlocation');
 
       submitButton.addEventListener('click', function () {
-      var loc = newLocation[0];
-      var loc = new Locations([1],[1]) //in the order of my constructer functions perametersdasdjsdk
-      alert(loc.value);
+      //var loc = new Locations(event.target.name.value) //in the order of my constructer functions perametersdasdjsdk
+      //alert(loc.value);
+      //console.log(loc);
+      //loc.donutsPerDay();
+      //loc.renderNewRow();
+      //loc.render();
+      var loc = new Locations([document.getElementById('value1'),document.getElementById('value2'),document.getElementById('value3'),document.getElementById('value4'),document.getElementById('value5')]);
+      console(loc.value);
    });
 
 

@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title id='hellow'>Top Pot Donuts</title>
+  <link rel="stylesheet" type="text/css" href="donutshop.css">
 </head>
 <body>
-  <table>
+  <table id="myTable">
     <tr id="hours"><th></th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>6:00 PM</td><td>Total</td></tr>
     <tr id="Downtown"><th>Downtown</th></tr>
     <tr id="CapitalHill"><th>Capitol Hill</th></tr>
@@ -14,11 +15,12 @@
     <tr id="Ballard"><th>Ballard</th></tr>
   </table>
     <form id="newLocation">
-      <label>Location: <input type="text" id="value1" name="input"></label>
-      <label>Minimum: <input type="number" id="value2" name="input"></label>
-      <label>Maximum: <input type="number" id="value3" name="input"></label>
-      <label>Average: <input type="number" id="value4" name="input"></label>
-      <button type="submit" id='submitlocation' default='false'>submit</button>
+      <label>Minimum: <input type="number" id="value1" name="input"></label>
+      <label>Maximum: <input type="number" id="value2" name="input"></label>
+      <label>Average: <input type="number" id="value3" name="input"></label>
+      <label>Location: <input type="text" id="value4" name="input"></label>
+      <label>Hours: <input type="number" id="value5" name="input"></label>
+      <button type="button" id='submitlocation' default='false'>submit</button>
     </form>
 
   <script type="text/javascript" src="donutshop.js"></script>
