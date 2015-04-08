@@ -1,10 +1,12 @@
 (function() {
-    var Locations = function(min, max, avg, name) {
+    var Locations = function(min, max, avg, name, hoursOfOperations) {
       this.min = min;
       this.max = max;
       this.avg = avg;
       this.donutsHour = [];
       this.name = name;
+      this.perDay = 0;
+      this.hoursOfOperations = hoursOfOperations;
     };
 
     Locations.prototype.donutsPerHour = function() {
@@ -13,39 +15,40 @@
     };
 
     Locations.prototype.donutsPerDay = function() {
-      var perDay;
-      for (i = 0; i <= 11; i++) {
+      for (i = 0; i <= this.hoursOfOperations; i++) {
       var donutsHourTotal = this.donutsPerHour();
       this.donutsHour.push(donutsHourTotal);
-      perDay += donutsHourTotal;
+      this.perDay += donutsHourTotal;
       }
-      return perDay;
     };
 
     Locations.prototype.render = function() {
-      var dailyTotal = this.donutsPerDay();
+      var tr = document.createElement(tr);
       var elTr = document.getElementById(this.name);
       for (var i = 0; i <= this.donutsHour.length; i++) {
         var el = document.createElement('td');
         el.textContent = this.donutsHour[i];
         elTr.appendChild(el);
       }
-      el.textContent = dailyTotal;
+      el.textContent = this.perDay;
       elTr.appendChild(el);
     };
 
-      var Downtown = new Locations(8, 43, 4.5, 'Downtown');
-      var CapitalHill = new Locations(4, 37, 2, 'CapitalHill');
-      var SouthLakeUnion = new Locations(9, 23, 6.33, 'SouthLakeUnion');
-      var Wedgewood = new Locations(2, 28, 1.25, 'Wedgewood');
-      var Ballard = new Locations(8, 58, 3.75, 'Ballard');
+      var Downtown = new Locations(8, 43, 4.5, 'Downtown', 11);
+      var CapitalHill = new Locations(4, 37, 2, 'CapitalHill', 11);
+      var SouthLakeUnion = new Locations(9, 23, 6.33, 'SouthLakeUnion', 11);
+      var Wedgewood = new Locations(2, 28, 1.25, 'Wedgewood', 11);
+      var Ballard = new Locations(8, 58, 3.75, 'Ballard', 11);
+      Downtown.donutsPerDay();
       Downtown.render();
+      CapitalHill.donutsPerDay();
       CapitalHill.render();
+      SouthLakeUnion.donutsPerDay();
       SouthLakeUnion.render();
+      Wedgewood.donutsPerDay();
       Wedgewood.render();
+      Ballard.donutsPerDay();
       Ballard.render();
-
-      var newLocation = new Locations();
 
       var location = window.location;
       var newLocation = document.getElementById("newLocation");
@@ -65,11 +68,13 @@
      };
    }
 
-      var submitButton = document.getElementById('hellow');
-      console.dir(submitButton);
-      //submitButton.addEventListener('click', function () {
-        //alert(yaa);
-   //});
+      var submitButton = document.getElementById('submitlocation');
+
+      submitButton.addEventListener('click', function () {
+      var loc = newLocation[0];
+      var loc = new Locations([1],[1]) //in the order of my constructer functions perametersdasdjsdk
+      alert(loc.value);
+   });
 
 
 })();
