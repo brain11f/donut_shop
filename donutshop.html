@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="all">
 <head>
   <meta charset="UTF-8">
   <title id='hellow'>Top Pot Donuts</title>
   <link rel="stylesheet" type="text/css" href="donutshop.css">
-</head>
-<body>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic' rel='stylesheet' type='text/css'></head>
+<main id="main">
   <table id="myTable">
-    <tr id="hours"><th></th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>6:00 PM</td><td>Total</td></tr>
-    <tr id="Downtown"><th>Downtown</th></tr>
-    <tr id="CapitalHill"><th>Capitol Hill</th></tr>
-    <tr id="SouthLakeUnion"><th>South Lake Union</th></tr>
-    <tr id="Wedgewood"><th>Wedgewood</th></tr>
-    <tr id="Ballard"><th>Ballard</th></tr>
-  </table>
+    <tr class="title"><th>Donuts Per Hour</th></tr>
+      <tr id="time" class="title">
+        <td>Location</td>
+        <td>7:00 am</td>
+        <td>8:00 am</td>
+        <td>9:00 am</td>
+        <td>10:00 am</td>
+        <td>11:00 am</td>
+        <td>12:00 pm</td>
+        <td>1:00 pm</td>
+        <td>2:00 pm</td>
+        <td>3:00 pm</td>
+        <td>4:00 pm</td>
+        <td>5:00 pm</td>
+        <td>6:00 pm</td>
+        <td>Total Sold</td>
+      </tr>
+    </table>
+    <section>
     <form id="newLocation">
-      <label>Minimum: <input type="number" id="value1" name="input"></label>
-      <label>Maximum: <input type="number" id="value2" name="input"></label>
-      <label>Average: <input type="number" id="value3" name="input"></label>
+      <fieldset>
+        <legend><h1 class="title">Add new Donut Shops</h1></legend>
       <label>Location: <input type="text" id="value4" name="input"></label>
-      <label>Hours: <input type="number" id="value5" name="input"></label>
-      <button type="button" id='submitlocation' default='false'>submit</button>
+      <label>Minimum: <input value="11" type="number" id="value1" name="input"></label>
+      <label>Maximum: <input value="11" type="number" id="value2" name="input"></label>
+      <label>Average: <input value="11" type="number" id="value3" name="input"></label>
+      <button type="submit" id='submitlocation' default='false'>submit</button>
     </form>
-
+    </fieldset>
+</section>
   <script type="text/javascript" src="donutshop.js"></script>
-</body>
+    <script type="text/javascript" src="addlocation.js"></script>
+</main>
 </html>
