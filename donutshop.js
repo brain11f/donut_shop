@@ -10,33 +10,36 @@
       this.closes = options.closes || 1800;
       this.hoursOpen = (this.closes - this.opens)/100;
       this.donutsHour = [];
-    }
+    };
 
-shops.push(new Locations ('Downtown', {min: 8, max: 43, avg: 4.5}))
-shops.push(new Locations ('Capitol Hill', {min: 4, max: 37, avg: 2}))
-shops.push(new Locations ('South Lake Union', {min: 9, max: 23, avg: 6.33}))
-shops.push(new Locations ('Wedgewood', {min: 2, max: 28, avg: 1.25}))
-shops.push(new Locations ('Ballard', {min: 8, max: 58, avg: 3.75}))
+var test1 = new Locations ('Downtown', {min: 8, max: 43, avg: 4.5});
+var test2 = new Locations ('Capitol Hill', {min: 4, max: 37, avg: 2});
+var test3 = new Locations ('South Lake Union', {min: 9, max: 23, avg: 6.33});
+var test4 = new Locations ('Wedgewood', {min: 2, max: 28, avg: 1.25});
+var test5 = new Locations ('Ballard', {min: 8, max: 58, avg: 3.75});
+
+shops.push(test1, test2, test3, test4, test5);
+
 
     Locations.prototype.donutsRandom = function() {
       var newCustomers = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
       return newCustomers;
-    }
+    };
 
     Locations.prototype.donutsPerHour = function() {
       for (i = 0; i <= this.hoursOpen; i++) {
         var amountSold = this.donutsRandom() * this.avg;
         this.donutsHour.push(amountSold);
         };
-    }
+    };
 
     Locations.prototype.donutsPerDay = function() {
     var all = 0;
-    for (var i = 0; i < this.donutsHour.length; i++) {
-    all += this.donutsHour[i];
-    }
-    return all;
-}
+      for (var i = 0; i < this.donutsHour.length; i++) {
+        all += this.donutsHour[i];
+      }
+      return all;
+    };
 
     Locations.prototype.render = function() {
       this.donutsPerHour();
@@ -48,10 +51,24 @@ shops.push(new Locations ('Ballard', {min: 8, max: 58, avg: 3.75}))
       return newRow;
     }
 
+    Locations.prototype.renderOldInfo = function() {
+    var hourDonuts = this.donutsPerHour();
+    var getInfo = document.getElementById('myTable');
     for (var i = 0; i < shops.length; i++) {
-  shops[i].render();
-};
-
+      var createTag = document.createElement('tr');
+      var createTagData = document.createElement('td');
+      createTag.textContent = shops[i]['locationName'];
+      createTagData.textContent = shops[i]['donutsHour'];
+      //createTag.textContent = this.donutsHour
+      getInfo.appendChild(createTag);
+      getInfo.appendChild(createTagData);
+      console.log(shops[i]);
+    }
+    createTag.textContent = hourDonuts;
+    getInfo.appendChild(createTag);
+  };
+test1.renderOldInfo();
+test2.renderOldInfo();
 
 window.Locations.locationName = Locations;
 
