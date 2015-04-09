@@ -51,24 +51,11 @@ shops.push(test1, test2, test3, test4, test5);
       return newRow;
     }
 
-    Locations.prototype.renderOldInfo = function() {
-    var hourDonuts = this.donutsPerHour();
-    var getInfo = document.getElementById('myTable');
-    for (var i = 0; i < shops.length; i++) {
-      var createTag = document.createElement('tr');
-      var createTagData = document.createElement('td');
-      createTag.textContent = shops[i]['locationName'];
-      createTagData.textContent = shops[i]['donutsHour'];
-      //createTag.textContent = this.donutsHour
-      getInfo.appendChild(createTag);
-      getInfo.appendChild(createTagData);
-      console.log(shops[i]);
-    }
-    createTag.textContent = hourDonuts;
-    getInfo.appendChild(createTag);
-  };
-test1.renderOldInfo();
-test2.renderOldInfo();
+test1.render();
+test2.render();
+test3.render();
+test4.render();
+test5.render();
 
 window.Locations.locationName = Locations;
 
