@@ -1,13 +1,33 @@
 .all {
   background-color: #046380;
+  padding-left: 12%;
+  padding-right: 12%;
 }
-
+h1 {
+  font-family: 'Audiowide', cursive;
+  background-color: #EF6F46;
+  border-radius: 10px;
+  width: 30em;
+  text-align: center;
+  float: center;
+}
+#myTable {
+  background-color: #E6E2AF;
+  border-radius: 10px;
+  width: 60em;
+  float: center;
+}
+fieldset {
+  background-color: #E6E2AF;
+  border-radius: 5px;
+  display: block;
+  width: 8em;
+  margin-top: 10px;
+  top: 20px;
+  width: 58em;
+  text-align: center;
+  float: center;
+}
 .title {
   font-family: 'Ubuntu', sans-serif;
-}
-
-#main {
-  background-color: #EFECCA;
-  border-radius: 10px;
-  box-shadow: 0.4em 0.4em 0.4em rgba(0,0,0,0.5);
 }

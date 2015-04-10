@@ -14,7 +14,7 @@
 
 var test1 = new Locations ('Downtown', {min: 8, max: 43, avg: 4.5});
 var test2 = new Locations ('Capitol Hill', {min: 4, max: 37, avg: 2});
-var test3 = new Locations ('South Lake Union', {min: 9, max: 23, avg: 6.33});
+var test3 = new Locations ('South Lake Union', {min: 9, max: 23, avg: 6.5});
 var test4 = new Locations ('Wedgewood', {min: 2, max: 28, avg: 1.25});
 var test5 = new Locations ('Ballard', {min: 8, max: 58, avg: 3.75});
 
