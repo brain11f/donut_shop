@@ -2,6 +2,8 @@
   background-color: #046380;
   padding-left: 12%;
   padding-right: 12%;
+  position: relative;
+  background-image: url(milkway.jpg);
 }
 h1 {
   font-family: 'Audiowide', cursive;
@@ -9,16 +11,49 @@ h1 {
   border-radius: 10px;
   width: 30em;
   text-align: center;
-  float: center;
+  content-right: -100em;
+}
+header img{
+  width: 500%;
+  height: auto;
+  position-right: relative;
+}
+.card-container {
+  height: 150px;
+  perspective: 600;
+  position: relative;
+  width: 150px;
+}
+.card {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 2s ease-in-out;
+  width: 100%;
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card .side {
+  backface-visibility: hidden;
+  height: 20%;
+  position: absolute;
+  width: 20%;
+}
+.card .back {
+  transform: rotateY(180deg);
+}
+.card-container {
+  position: relative; top: 80px; left: 800px;
 }
 #myTable {
-  background-color: #E6E2AF;
+  background-color: #046380;
   border-radius: 10px;
   width: 60em;
   float: center;
 }
 fieldset {
-  background-color: #E6E2AF;
+  background-color: #046380;
   border-radius: 5px;
   display: block;
   width: 8em;
